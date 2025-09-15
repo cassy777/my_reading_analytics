@@ -22,7 +22,9 @@ max_day=day_stats.idxmax()
 print(f"阅读最久的天是{max_day},读了{day_stats[max_day]}分钟")
 
 #4.生成一个html报告
-
+report=book_stats.to_frame().to_html()
+with open('output/report.html','w',encoding='utf-8')as f:
+    f.write(f"<h1>我的阅读分析报告</h1><p>总阅读时长：{total_minutes}分钟</p> "+ report)
 
 
 
